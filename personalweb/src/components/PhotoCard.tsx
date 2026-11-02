@@ -16,7 +16,8 @@ export default function PhotoCard({ photo, index, onOpen }: PhotoCardProps) {
       <button
         type="button"
         onClick={() => onOpen(index)}
-        className="group block w-full cursor-zoom-in text-left"
+        className="group block w-full cursor-zoom-in text-left cursor-target"
+        data-cursor-label="View"
         aria-label={`Open ${photo.title} in fullscreen viewer`}
       >
         <Frame

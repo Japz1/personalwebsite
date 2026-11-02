@@ -18,7 +18,8 @@ export default function FilmCard({ film, onOpen, wide = false, className = '' }:
       <button
         type="button"
         onClick={() => onOpen(film)}
-        className="group block w-full text-left"
+        className="group block w-full text-left cursor-target"
+        data-cursor-label="Play"
         aria-label={`Play ${film.title}`}
       >
         <Frame

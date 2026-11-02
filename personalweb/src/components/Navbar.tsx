@@ -40,7 +40,8 @@ export default function Navbar() {
         <nav className="mx-auto flex max-w-[1700px] items-center justify-between px-[var(--spacing-gutter)] py-4">
           <Link
             to="/"
-            className="group flex items-center"
+            className="group flex items-center cursor-target"
+            data-cursor-label="Home"
             aria-label={`${owner.name} — home`}
           >
             <VallerianLogo size={46} className="text-cream transition-transform duration-300 group-hover:scale-105" />
@@ -52,8 +53,9 @@ export default function Navbar() {
               <li key={item.to}>
                 <NavLink
                   to={item.to}
+                  data-cursor-label={item.label}
                   className={({ isActive }) =>
-                    `eyebrow !text-[0.66rem] transition-colors hover:text-cream ${
+                    `eyebrow !text-[0.66rem] transition-colors hover:text-cream cursor-target ${
                       isActive ? 'text-cream' : 'text-mute'
                     }`
                   }
