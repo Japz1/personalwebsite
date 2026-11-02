@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace with the deployed domain, and keep sitemap.xml in sync with it.
+Sitemap: https://example.com/sitemap.xml

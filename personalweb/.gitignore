@@ -1,0 +1,19 @@
+# ---- dependencies ----
+node_modules
+dist
+.studio
+studio/dist
+
+# ---- environment (PRD §7.3: never commit credentials) ----
+.env
+.env.local
+.env.*.local
+
+# ---- logs & editor noise ----
+npm-debug.log*
+yarn-error.log*
+.DS_Store
+.vercel
+*.local
+.vscode/*
+!.vscode/extensions.json

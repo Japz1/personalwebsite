@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111111" />
+  <title>Vallerian Dava Dayoh — Photographer &amp; Cinematographer</title>
+  <meta name="description"
+    content="Personal portfolio of Vallerian Dava Dayoh — photographer, cinematographer and visual storyteller. Capturing moments, preserving stories." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vallerian Dava Dayoh — Photographer &amp; Cinematographer" />
+  <meta property="og:description" content="Capturing moments, preserving stories." />
+  <meta property="og:site_name" content="Vallerian Dava Dayoh" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    html,
+    body {
+      margin: 0;
+      background: #111111;
+    }
+
+    .boot {
+      position: fixed;
+      inset: 0;
+      display: grid;
+      place-content: center;
+      gap: 18px;
+      justify-items: center;
+      font-family: 'Cormorant Garamond', serif;
+      color: #eae6df;
+    }
+
+    .boot__mark {
+      font-size: 56px;
+      letter-spacing: .12em;
+      animation: bootPulse 2.4s ease-in-out infinite;
+    }
+
+    .boot__label {
+      font-family: 'Inter', sans-serif;
+      font-size: 10px;
+      letter-spacing: .42em;
+      text-transform: uppercase;
+      color: #999999;
+    }
+
+    @keyframes bootPulse {
+
+      0%,
+      100% {
+        opacity: .35
+      }
+
+      50% {
+        opacity: 1
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div class="boot">
+      <span class="boot__mark">V</span>
+      <span class="boot__label">Loading</span>
+    </div>
+  </div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
