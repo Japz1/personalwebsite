@@ -7,6 +7,7 @@ import Frame from '../components/Frame'
 import SectionHeading from '../components/SectionHeading'
 import FilmCard from '../components/FilmCard'
 import { PatternWaves } from '../components/ui/PatternWaves'
+import TechText from '../components/ui/TechText'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import { InstagramIcon, WhatsAppIcon } from '../components/icons'
 import { usePortfolioData } from '../lib/PortfolioContext'
@@ -94,14 +95,26 @@ export default function Home({ onOpenPhotos, onOpenFilm }: HomeProps) {
             Creative Portfolio
           </motion.p>
 
-          {/* Main wordmark */}
-          <motion.h1
+          {/* Main wordmark — canvas vector effect, font inherited from `font-sans` */}
+          <motion.div
             initial={{ opacity: 0, y: 32 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 1.3, delay: 0.15, ease: EASE } }}
-            className="mt-6 font-sans text-[clamp(2.8rem,11vw,9.5rem)] font-[420] leading-[0.92] tracking-[0.12em] uppercase"
+            role="heading"
+            aria-level={1}
+            className="mt-6 w-full font-sans"
           >
-            VALLERIAN
-          </motion.h1>
+            {/* Wrapper supplies the definite height: TechText's own CSS uses
+                height:100%, which needs a sized parent to resolve against. */}
+            <div className="h-[clamp(3.5rem,12.5vw,8.25rem)] w-full">
+              <TechText
+                text="VALLERIAN"
+                fontWeight={420}
+                fontSize={152}
+                letterSpacing={0.12}
+                labels={false}
+              />
+            </div>
+          </motion.div>
 
           {/* Professional title */}
           <motion.p
