@@ -1,0 +1,22 @@
+.lanyard {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.lanyard-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Fixed portal layer rendered on document.body by <LanyardStage />.
+   Layer order: navbar (z-50) / mobile menu (z-40) > lanyard (z-35) > page
+   content (z-0..30). Position + size are synced to the in-flow spacer. */
+.lanyard-stage-layer {
+  position: fixed;
+  z-index: 35;
+  pointer-events: auto;
+}
+    

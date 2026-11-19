@@ -4,7 +4,8 @@ import Page from '../components/Page'
 import SectionHeading from '../components/SectionHeading'
 import { Reveal, RevealGroup, RevealItem } from '../components/Reveal'
 import { brandIconFor } from '../components/icons'
-import { DriftWall, type DriftWallItem } from '../components/ui/DriftWall'
+import Lanyard from '../components/ui/Lanyard'
+import LanyardStage from '../components/LanyardStage'
 import { usePortfolioData } from '../lib/PortfolioContext'
 import { resolveMedia } from '../lib/sanity'
 import { fadeUp } from '../lib/motion'
@@ -45,41 +46,31 @@ export default function About() {
     { value: owner.instagram ? `@${owner.instagram}` : '—', label: 'Where most of this starts' },
   ]
 
-  // Prepare images for DriftWall: combine portrait with published photo thumbnails
-  const wallItems: DriftWallItem[] = [
-    ...(portrait ? [{ image: portrait, title: owner.name }] : []),
-    ...photos.map((p) => ({
-      image: p.thumb || p.url,
-      title: p.title,
-    })),
-  ]
-
   return (
     <Page>
       <div className="shell">
-        {/* Portrait / DriftWall + statement */}
+        {/* Portrait lanyard + statement */}
         <section className="grid gap-12 pt-36 md:grid-cols-[0.9fr_1fr] md:gap-20 md:pt-44 items-center">
-          <Reveal variants={fadeUp} className="relative h-120 sm:h-145 md:h-162.5 w-full rounded-2xl overflow-hidden border border-cream/10 bg-charcoal/40">
-            <DriftWall
-              items={wallItems}
-              columns={3}
-              tileWidth={170}
-              tileHeight={120}
-              gap={16}
-              tilt={12}
-              turn={-10}
-              depth={100}
-              speed={34}
-              direction="up"
-              variance={0.4}
-              parallax={0.5}
-              lift={48}
-              fade={0.65}
-              dim={0.65}
-              overlayColor="#111111"
+          {/* Bare stage: no box — the lanyard lives in a fixed portal layer
+              (above page content, below the navbar) that tracks this spacer. */}
+          <LanyardStage spacerClassName="relative -mt-24 sm:-mt-32 md:-mt-40 h-145 sm:h-165 md:h-180 w-full">
+            <Lanyard
+              frontImage={portrait}
+              backImage={portrait}
+              imageFit="cover"
+              orientation="portrait"
+              finish="matte"
+              cornerRadius={0.25}
+              size={0.48}
+              anchor="center"
+              strapLength={0.4}
+              strapColor="#111111"
+              strapWidth={0.65}
+              metal="graphite"
+              breeze={0.35}
               className="w-full h-full"
             />
-          </Reveal>
+          </LanyardStage>
 
           <div className="flex flex-col justify-center">
             <Reveal variants={fadeUp}>
